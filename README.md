@@ -1,4 +1,4 @@
-# Checkers Digital Storefront & Web Portal
+# Checkers Website
 
 ## Project Overview
 This project is a 5-page responsive website developed for Checkers South Africa as part of the Web Development 1 module assessment. The website highlights Checkers' key offerings, specialty brands (Simple Truth & Forage & Feast), Sixty60 delivery integration, Xtra Savings rewards, an interactive enquiry form, and a multi-location store locator.
