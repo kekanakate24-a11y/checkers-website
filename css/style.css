@@ -14,7 +14,7 @@ body {
 
 /* Header & Navigation Bar */
 header {
-    background-color: #00838f; /* Checkers Teal */
+    background-color: #16a9b6; /* Checkers Teal */
     color: #ffffff;
     padding: 1rem 2rem;
     display: flex;
@@ -59,7 +59,7 @@ section {
 
 /* Buttons */
 button, .btn {
-    background-color: #00838f;
+    background-color: #4dbfca;
     color: #ffffff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -69,7 +69,7 @@ button, .btn {
 }
 
 button:hover {
-    background-color: #005662;
+    background-color: #377982;
 }
 
 /* Form Controls */
@@ -85,7 +85,7 @@ input, select, textarea {
 footer {
     text-align: center;
     padding: 1.5rem;
-    background-color: #212121;
+    background-color: #000000;
     color: #ffffff;
     margin-top: 2rem;
 }
