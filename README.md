@@ -6,8 +6,8 @@ This project is a 5-page responsive website developed for Checkers South Africa 
 ---
 
 ## Student
-* **Student Number:** [ST10526600]
-* **Module Name:** Web Development 
+* **Student Number:** ST10526600
+* **Module:** Web Development 
 ---
 
 ## Website Sitemap & Architecture
