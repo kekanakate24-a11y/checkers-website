@@ -25,27 +25,31 @@
         <section id="enquiry-section">
             <h2>Customer Enquiry Form</h2>
             <p>Please submit your query regarding Xtra Savings, Sixty60 deliveries, or general store feedback.</p>
+            
+            <form id="enquiryForm" action="#" method="post">
+    <label for="fullname">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname" required><br><br>
 
-            <form action="#" method="post">
-                <label for="fullname">Full Name:</label><br>
-                <input type="text" id="fullname" name="fullname" required><br><br>
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
 
-                <label for="email">Email Address:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+    <label for="category">Enquiry Category:</label><br>
+    <select id="category" name="category" required>
+        <option value="">-- Select a category --</option>
+        <option value="sixty60">Sixty60 Order Query</option>
+        <option value="xtra_savings">Xtra Savings Card Support</option>
+        <option value="product">Product Feedback</option>
+        <option value="general">General Enquiry</option>
+    </select><br><br>
 
-                <label for="category">Enquiry Category:</label><br>
-                <select id="category" name="category">
-                    <option value="sixty60">Sixty60 Order Query</option>
-                    <option value="xtra_savings">Xtra Savings Card Support</option>
-                    <option value="product">Product Feedback</option>
-                    <option value="general">General Enquiry</option>
-                </select><br><br>
+    <label for="message">Your Message:</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-                <label for="message">Your Message:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+    <button type="submit">Submit Enquiry</button>
 
-                <button type="submit">Submit Enquiry</button>
-            </form>
+    <p id="formMessage" role="status" aria-live="polite"></p>
+</form>
+
         </section>
     </main>
 
