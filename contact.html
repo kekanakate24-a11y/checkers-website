@@ -1,8 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Find Checkers store locations, trading hours and customer care contact information. Send a message to Checkers customer care.">
+
     <title>Checkers | Store Locator & Contact Us</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -10,6 +14,7 @@
 
     <header>
         <img src="images/checkers-logo.png" alt="Checkers Logo" width="150">
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -27,7 +32,6 @@
             <p>Find your nearest Checkers Hyper or supermarket branch and view trading hours.</p>
         </section>
 
-        <!-- Multi-location details section -->
         <section id="store-locations">
             <h2>Key Locations</h2>
 
@@ -54,15 +58,145 @@
         </section>
 
         <section id="customer-care">
-            <h2>Customer Care Center</h2>
+            <h2>Customer Care Centre</h2>
             <p><strong>Toll-Free Helpline:</strong> 0800 010 709</p>
-            <p><strong>Email:</strong> support@checkers.co.za</p>
+            <p><strong>Email:</strong>
+                <a href="mailto:support@checkers.co.za">support@checkers.co.za</a>
+            </p>
+        </section>
+
+        <!-- General contact form -->
+        <section id="contact-form-section">
+            <h2>Contact Checkers</h2>
+            <p>Complete the form below to prepare a message for our customer care team.</p>
+
+            <form id="contactForm"
+                  action="mailto:support@checkers.co.za"
+                  method="post"
+                  enctype="text/plain">
+
+                <label for="contactName">Full Name:</label><br>
+                <input
+                    type="text"
+                    id="contactName"
+                    name="contactName"
+                    minlength="2"
+                    maxlength="60"
+                    autocomplete="name"
+                    required
+                ><br><br>
+
+                <label for="contactEmail">Email Address:</label><br>
+                <input
+                    type="email"
+                    id="contactEmail"
+                    name="contactEmail"
+                    autocomplete="email"
+                    required
+                ><br><br>
+
+                <label for="contactPhone">Phone Number (optional):</label><br>
+                <input
+                    type="tel"
+                    id="contactPhone"
+                    name="contactPhone"
+                    placeholder="e.g. 0821234567"
+                    pattern="(\+27|0)[0-9]{9}"
+                    title="Enter a South African number, e.g. 0821234567 or +27821234567."
+                    autocomplete="tel"
+                ><br><br>
+
+                <label for="messageType">Type of Message:</label><br>
+                <select id="messageType" name="messageType" required>
+                    <option value="">-- Select a message type --</option>
+                    <option value="General question">General question</option>
+                    <option value="Store feedback">Store feedback</option>
+                    <option value="Product complaint">Product complaint</option>
+                    <option value="Staff compliment">Staff compliment</option>
+                    <option value="Other">Other</option>
+                </select><br><br>
+
+                <label for="contactMessage">Your Message:</label><br>
+                <textarea
+                    id="contactMessage"
+                    name="contactMessage"
+                    rows="6"
+                    minlength="10"
+                    maxlength="1000"
+                    placeholder="Type your message here..."
+                    required
+                ></textarea><br><br>
+
+                <p id="contactError" role="alert" aria-live="polite"></p>
+                <p id="contactStatus" role="status" aria-live="polite"></p>
+
+                <button type="submit">Prepare Email</button>
+                <button type="reset">Clear Form</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Checkers South Africa. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contactForm");
+            const errorMessage = document.getElementById("contactError");
+            const statusMessage = document.getElementById("contactStatus");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                errorMessage.textContent = "";
+                statusMessage.textContent = "";
+
+                if (!form.checkValidity()) {
+                    form.reportValidity();
+                    errorMessage.textContent =
+                        "Please check the form and correct any missing or invalid information.";
+                    return;
+                }
+
+                const name = document.getElementById("contactName").value.trim();
+                const email = document.getElementById("contactEmail").value.trim();
+                const phone = document.getElementById("contactPhone").value.trim();
+                const type = document.getElementById("messageType").value;
+                const message = document.getElementById("contactMessage").value.trim();
+
+                if (name.length < 2 || message.length < 10) {
+                    errorMessage.textContent =
+                        "Please enter your full name and a message of at least 10 characters.";
+                    return;
+                }
+
+                const subject = "Checkers Contact: " + type;
+
+                const body =
+                    "Name: " + name + "\n" +
+                    "Email: " + email + "\n" +
+                    "Phone: " + (phone || "Not provided") + "\n" +
+                    "Message type: " + type + "\n\n" +
+                    "Message:\n" + message;
+
+                const emailLink =
+                    "mailto:support@checkers.co.za" +
+                    "?subject=" + encodeURIComponent(subject) +
+                    "&body=" + encodeURIComponent(body);
+
+                statusMessage.textContent =
+                    "Your email application should open with your message prepared. Please review and send it there.";
+
+                window.location.href = emailLink;
+            });
+
+            form.addEventListener("reset", function () {
+                errorMessage.textContent = "";
+                statusMessage.textContent = "";
+            });
+        });
+    </script>
 
 </body>
 </html>

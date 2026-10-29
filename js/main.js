@@ -79,3 +79,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const enquiryForm = document.getElementById("enquiryForm");
+    const formMessage = document.getElementById("formMessage");
+
+    if (!enquiryForm || !formMessage) return;
+
+    let messageTimer;
+
+    enquiryForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!enquiryForm.checkValidity()) {
+            enquiryForm.reportValidity();
+            return;
+        }
+
+        formMessage.textContent =
+            "Thank you! Your enquiry has been submitted successfully.";
+        formMessage.style.color = "green";
+
+        clearTimeout(messageTimer);
+
+        messageTimer = setTimeout(function () {
+            formMessage.textContent = "";
+        }, 5000);
+
+        enquiryForm.reset();
+    });
+});
+
+
