@@ -192,3 +192,5 @@ MDN Web Docs (n.d.) *HTML: HyperText Markup Language*. Available at: https://dev
 MDN Web Docs (n.d.) *CSS: Cascading Style Sheets*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 1 November 2026).
 
 MDN Web Docs (n.d.) *JavaScript*. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 1 November 2026).
+
+Theyse, Y. (n.d.) ‘Review: Sixty 60 Grocery App Checkers’. MoneyShop. Available at: https://www.moneyshop.co.za/money/budget/review-sixty-60-grocery-app-checkers/ (Accessed: 1 November 2026). 
